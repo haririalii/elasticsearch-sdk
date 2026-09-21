@@ -196,6 +196,10 @@ var client = RestClientFactory.create(
 
 Use `ElasticIndexer` when mapping source entities and dispatching index or delete operations, particularly when an application-managed `Executor` should run indexing asynchronously. Mapping classes used with `ElasticIndexer` must provide an accessible no-argument constructor.
 
+## Runnable example
+
+[`examples/product-catalog`](examples/product-catalog) is a Quarkus application that starts from a plain domain model, creates the `products` mapping, indexes sample products, and exposes a full-text search endpoint. Its [README](examples/product-catalog/README.md) includes the commands to run it against the included local Elasticsearch Docker Compose service.
+
 ## Build and test
 
 ```bash

@@ -1,0 +1,22 @@
+# Build output
+target/
+build/
+.gradle/
+
+# IDE and editor settings
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS files
+.DS_Store

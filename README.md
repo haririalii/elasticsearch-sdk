@@ -21,13 +21,34 @@ The SDK uses the Elasticsearch 8.x Java API client for HTTP operations. Its publ
 
 ## Installation
 
-The artifact is not currently published to a remote Maven repository. Build and install it locally:
+Packages are published to GitHub Packages when a version tag is pushed. Configure Maven to authenticate with a GitHub personal access token (classic) that has the `read:packages` scope. Store the token in an environment variable rather than committing it:
 
-```bash
-mvn install
+```xml
+<!-- ~/.m2/settings.xml -->
+<settings>
+    <servers>
+        <server>
+            <id>github</id>
+            <username>YOUR_GITHUB_USERNAME</username>
+            <password>${env.GITHUB_PACKAGES_TOKEN}</password>
+        </server>
+    </servers>
+</settings>
 ```
 
-Then add it to a consuming Maven project:
+Add the GitHub Packages repository and the dependency to the consuming project's `pom.xml`:
+
+```xml
+<repositories>
+    <repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/haririalii/elasticsearch-sdk</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+```
 
 ```xml
 <dependency>
@@ -36,6 +57,8 @@ Then add it to a consuming Maven project:
     <version>2.0.0-SNAPSHOT</version>
 </dependency>
 ```
+
+For local development, build and install the SDK into your local Maven repository with `mvn install`.
 
 ## Quick start
 

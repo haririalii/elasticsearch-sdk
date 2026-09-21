@@ -26,7 +26,7 @@
         <elasticsearch.version>8.17.0</elasticsearch.version>
         <jackson.version>2.22.2</jackson.version>
         <jakarta.data.version>1.0.1</jakarta.data.version>
-        <slf4j.version>2.0.17</slf4j.version>
+        <slf4j.version>2.0.19</slf4j.version>
         <junit.version>6.1.3</junit.version>
     </properties>
 
